@@ -37,7 +37,7 @@
 <string name="change_language">Cambiar el Idioma</string>
 <string name="change_password">Contraseña</string>
 <string name="change_server_url">URL del Servidor</string>
-<string name="change_username">Nombre del Usuario de ODK</string>
+<string name="change_username">Nombre del Usuario de Datawinners</string>
 <string name="clearanswer_confirm">Borrar la respuesta a \"%s\"?</string>
 <string name="clear_answer">Borrar respuesta</string>
 <string name="clear_answer_ask">Borrar Esta Respuesta?</string>
@@ -164,7 +164,7 @@
 <string name="url_error">URL invalido!</string>
 <string name="username">Nombre del Usuario</string>
 <string name="view_hierarchy">Ir a la Pregunta</string>
-<string name="open_data_kit">Open Data Kit</string>
+<string name="data_winners">DataWinners</string>
 <string name="general_preferences">"Cambiar los Ajustes"</string>
 <string name="click_to_web">Toque para visitar http://www.datawinners.com</string>
 <string name="first_run">Corra lo primero despues de reiniciar</string>
@@ -172,7 +172,7 @@
 <string name="show_splash">Mostar la Pantalla Inicial</string>
 <string name="show_splash_summary">Muestra cuando la aplicacion empieza</string>
 <string name="splash_path">Seleccione la Imagen para la Pantalla Inicial</string>
-<string name="default_splash_path">Predeterminado por ODK</string>
+<string name="default_splash_path">Predeterminado por Datawinners</string>
 <string name="select_another_image">Seleccione Otra Imagen</string>
 <string name="use_odk_default">Usar la Imagen por Defecto</string>
 <string name="change_splash_path">Cambiar la Imagen</string>
@@ -190,7 +190,7 @@
 <string name="change_font_size">Tamaño del Texto</string>
 <string name="form_scan_starting">Escaneando para formularios…</string>
 <string name="form_scan_finished">Escaneo del formulario completado</string>
-<string name="powered_by_odk">Desarrollado por Open Data Kit</string>
+<string name="powered_by_datawinners">Desarrollado por DataWinners</string>
 <string name="default_odk_formlist">/formList</string>
 <string name="default_odk_submission">/submission</string>
 <string name="access_error">"Error mientras accediendo a %s: "</string>

@@ -140,7 +140,7 @@
         <!-- Enable Shortcuts for Command Actions -->
         <activity
             android:name=".activities.AndroidShortcuts"
-            android:label="ODK Form"
+            android:label="Datawinners Form"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />

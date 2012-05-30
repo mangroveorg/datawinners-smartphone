@@ -37,7 +37,7 @@
 <string name="change_language">Đổi ngôn ngữ</string>
 <string name="change_password">Mật khẩu</string>
 <string name="change_server_url">Địa chỉ máy chủ</string>
-<string name="change_username">Tên truy cập ODK</string>
+<string name="change_username">Tên truy cập Datawinners</string>
 <string name="clearanswer_confirm">Xoá câu trả lời \"%s\"?</string>
 <string name="clear_answer">Xoá câu trả lời</string>
 <string name="clear_answer_ask">Muốn xoá câu trả lời này?</string>
@@ -164,7 +164,7 @@
 <string name="url_error">Xin lỗi URL không đúng!</string>
 <string name="username">Tên truy cập</string>
 <string name="view_hierarchy">Di chuyển đến</string>
-<string name="open_data_kit">Open Data Kit</string>
+<string name="data_winners">DataWinners</string>
 <string name="general_preferences">Thay đổi thiết lập</string>
 <string name="click_to_web">Nhấn đề xem http://www.datawinners.com</string>
 <string name="first_run">Chạy lần đầu tiên khi khởi động</string>
@@ -172,7 +172,7 @@
 <string name="show_splash">Hiển thị màn hình chào</string>
 <string name="show_splash_summary">Hiển thị khi chương trình khởi động</string>
 <string name="splash_path">Chọn ảnh màn hình chào</string>
-<string name="default_splash_path">Mặc định ODK</string>
+<string name="default_splash_path">Mặc định Datawinners</string>
 <string name="select_another_image">Chọn ảnh khác</string>
 <string name="use_odk_default">Chọn ảnh mặc định</string>
 <string name="change_splash_path">Đổi ảnh</string>
@@ -190,7 +190,7 @@
 <string name="change_font_size">Kích thước chữ</string>
 <string name="form_scan_starting">Quét tìm biểu mẫu …</string>
 <string name="form_scan_finished">Hoàn thành tìm biểu mẫu</string>
-<string name="powered_by_odk">v1.2 RC1 - Powered by Open Data Kit</string>
+<string name="powered_by_datawinners">Powered by DataWinners</string>
 <string name="default_odk_formlist">/formList</string>
 <string name="default_odk_submission">/submission</string>
 <string name="access_error">"Lỗi khi truy cập %s: "</string>
