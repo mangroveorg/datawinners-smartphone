@@ -7,7 +7,7 @@
 		android:summary="@string/click_to_web">
 		<intent
 			android:action="android.intent.action.VIEW"
-			android:data="http://opendatakit.org" />
+			android:data="http://www.datawinners.com" />
 	</PreferenceScreen>
 	<PreferenceCategory android:title="@string/server_preferences">
 		<ListPreference

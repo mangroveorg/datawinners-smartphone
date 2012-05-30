@@ -166,7 +166,7 @@
 <string name="view_hierarchy">Atsakymų sąrašas</string>
 <string name="open_data_kit">Open Data Kit</string>
 <string name="general_preferences">Keisti nuostatas</string>
-<string name="click_to_web">Bakstelėkite, kad aplankytumėte http://opendatakit.org</string>
+<string name="click_to_web">Bakstelėkite, kad aplankytumėte http://www.datawinners.com</string>
 <string name="first_run">"Perleidus iš naujo vykdyti pirmo karto paleidimą"</string>
 <string name="client">Klientas</string>
 <string name="show_splash">Rodyti užsklandą</string>
@@ -177,7 +177,7 @@
 <string name="use_odk_default">Naudoti numatytąjį paveikslėlį</string>
 <string name="change_splash_path">Pakeisti paveikslėlį</string>
 <string name="show_location">Rodyti vietovę</string>
-<string name="app_url">http://opendatakit.org</string>
+<string name="app_url">http://www.datawinners.com</string>
 <string name="keep_changes">Išsaugoti pakeitimus</string>
 <string name="go_to_location">Aplankyti vietovę</string>
 <string name="change_formlist_url">Formų sąrašo kelias (pridėtas prie serverio URL)</string>

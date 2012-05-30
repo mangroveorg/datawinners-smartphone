@@ -166,7 +166,7 @@
 <string name="view_hierarchy">Risalah</string>
 <string name="open_data_kit">Open Data Kit</string>
 <string name="general_preferences">Pengaturan</string>
-<string name="click_to_web">Tap untuk berkunjung ke http://opendatakit.org</string>
+<string name="click_to_web">Tap untuk berkunjung ke http://www.datawinners.com</string>
 <string name="first_run">Langsung jalan saat dimuat ulang</string>
 <string name="client">Klien</string>
 <string name="show_splash">"Perlihatkan tampilan pembuka"</string>
@@ -177,7 +177,7 @@
 <string name="use_odk_default">Gunakan gambar awal</string>
 <string name="change_splash_path">Ubah gambar</string>
 <string name="show_location">Tunjukkan lokasi</string>
-<string name="app_url">http://opendatakit.org</string>
+<string name="app_url">http://www.datawinners.com</string>
 <string name="keep_changes">Simpan perubahan</string>
 <string name="go_to_location">Pilih lokasi</string>
 <string name="change_formlist_url">Tautan formulir (appended to Server URL)</string>
