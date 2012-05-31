@@ -1,5 +1,5 @@
 .idea/
 out/
 bin/
-.idea/workspace.xml
+*.iml
 gen/
