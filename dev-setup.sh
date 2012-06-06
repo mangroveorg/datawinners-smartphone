@@ -6,5 +6,4 @@ cd opendatakit.collect/
 echo "android.library=true" >> project.properties
 echo "jar.libs.dir=lib" >> ant.properties
 cd ../datawinners-smartphone/
-echo "android.library.reference.1=../opendatakit.collect" >> project.properties
 ln -s ../opendatakit.collect/lib ./libs
