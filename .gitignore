@@ -3,3 +3,4 @@ out/
 bin/
 *.iml
 gen/
+opendatakit.collect
