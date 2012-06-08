@@ -42,9 +42,9 @@ License.
 <string name="clear_answer_ask">Enlever cette réponse?</string>
 <string name="clear_answer_no">Annuler</string>
 <string name="completed_data">Complet (%s)</string>
-<string name="data">Formulaires sauvegardés</string>
-<string name="data_saved_error">Désolé, la sauvegarde du formulaire a échoué.</string>
-<string name="data_saved_ok">Le Formulaire a été enregistré avec succès.</string>
+<string name="data">Questionnaires sauvegardés</string>
+<string name="data_saved_error">Désolé, la sauvegarde du Questionnaire a échoué.</string>
+<string name="data_saved_ok">Le Questionnaire a été enregistré avec succès.</string>
 <string name="default_completed">Version finale par défaut</string>
 <string name="default_completed_summary">Marquer comme finalisé par défaut</string>
 <string name="default_server_url">https://www.datawinners.com/xforms</string>
