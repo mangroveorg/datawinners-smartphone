@@ -9,7 +9,7 @@
 	the specific language governing permissions and limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.odk.collect.android"
+    package="com.datawinners.android.collect"
     android:versionName="1.0" >
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -45,12 +45,12 @@
             android:authorities="org.odk.collect.android.provider.odk.instances" />
 
         <activity
-            android:name=".activities.MainMenuActivity"
+            android:name="org.odk.collect.android.activities.MainMenuActivity"
             android:configChanges="orientation"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".activities.FormEntryActivity"
+            android:name="org.odk.collect.android.activities.FormEntryActivity"
             android:configChanges="orientation"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize" >
@@ -65,13 +65,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.AccountList"
+            android:name="org.odk.collect.android.activities.AccountList"
             android:label="@string/app_name" />
         <activity
-            android:name=".activities.AccountInfo"
+            android:name="org.odk.collect.android.activities.AccountInfo"
             android:label="@string/app_name" />
         <activity
-            android:name=".activities.InstanceChooserList"
+            android:name="org.odk.collect.android.activities.InstanceChooserList"
             android:label="@string/app_name" />
 
         <intent-filter>
@@ -84,10 +84,10 @@
         </intent-filter>
 
         <activity
-            android:name=".activities.InstanceChooserTabs"
+            android:name="org.odk.collect.android.activities.InstanceChooserTabs"
             android:label="@string/app_name" />
         <activity
-            android:name=".activities.FormChooserList"
+            android:name="org.odk.collect.android.activities.FormChooserList"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -100,34 +100,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.FormManagerList"
+            android:name="org.odk.collect.android.activities.FormManagerList"
             android:label="@string/app_name" />
         <activity
-            android:name=".activities.FormDownloadList"
+            android:name="org.odk.collect.android.activities.FormDownloadList"
             android:label="@string/app_name" />
         <activity
-            android:name=".activities.DataManagerList"
+            android:name="org.odk.collect.android.activities.DataManagerList"
             android:label="@string/app_name" />
         <activity
-            android:name=".activities.FileManagerTabs"
+            android:name="org.odk.collect.android.activities.FileManagerTabs"
             android:label="@string/app_name" />
         <activity
-            android:name=".activities.InstanceUploaderList"
+            android:name="org.odk.collect.android.activities.InstanceUploaderList"
             android:label="@string/app_name" />
         <activity
-            android:name=".activities.InstanceUploaderActivity"
+            android:name="org.odk.collect.android.activities.InstanceUploaderActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".preferences.PreferencesActivity"
+            android:name="org.odk.collect.android.preferences.PreferencesActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".activities.FormHierarchyActivity"
+            android:name="org.odk.collect.android.activities.FormHierarchyActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".activities.GeoPointActivity"
+            android:name="org.odk.collect.android.activities.GeoPointActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".activities.SplashScreenActivity"
+            android:name="org.odk.collect.android.activities.SplashScreenActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Dialog" >
             <intent-filter>
@@ -139,7 +139,7 @@
         </activity>
         <!-- Enable Shortcuts for Command Actions -->
         <activity
-            android:name=".activities.AndroidShortcuts"
+            android:name="org.odk.collect.android.activities.AndroidShortcuts"
             android:label="Datawinners Form"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
             <intent-filter>
