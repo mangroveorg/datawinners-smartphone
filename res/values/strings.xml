@@ -210,7 +210,7 @@
 <string name="choose_image">Choose Image</string>
 <string name="selected">Selected: </string>
 <string name="select_answer">Select Answer</string>
-<string name="save_form_as">Name this Questionnaire:</string>
+<string name="save_form_as">Save the competed questionnaire as :</string>
 <string name="save_as_error">Saved name must not be blank!</string>
 <string name="form_name">Questionnaire Name:</string>
 <string name="edit_prompt">Edit Prompt</string>
