@@ -2,7 +2,7 @@ package com.datawinners.android.collect.test;
 
 import android.test.ActivityInstrumentationTestCase2;
 import com.jayway.android.robotium.solo.Solo;
-import org.odk.collect.android.activities.*;
+import org.odk.collect.android.activities.SplashScreenActivity;
 
 /**
  * This is a simple framework for a test of an Application.  See
@@ -17,6 +17,7 @@ import org.odk.collect.android.activities.*;
 public class MainMenuActivityTest extends ActivityInstrumentationTestCase2<SplashScreenActivity> {
 
     private Solo solo;
+
     public MainMenuActivityTest() {
         super(SplashScreenActivity.class);
     }
@@ -27,8 +28,10 @@ public class MainMenuActivityTest extends ActivityInstrumentationTestCase2<Splas
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
-    public void testTp() {
+    public void testShouldCheckForCorrectLabelsOnMainMenu() {
         assertTrue(solo.searchText("DataWinners"));
+        assertTrue(solo.searchButton("Edit Saved Questionnaire"));
+
     }
 
     @Override
