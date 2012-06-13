@@ -23,4 +23,58 @@ License.
     <string name="main_menu_message">DataWinners</string>
     <string name="download">Obtenir ceux sélectionnés</string>
     <string name="default_server_url">https://www.datawinners.com/xforms</string>
+    <string name="data">Questionnaires sauvegardés</string>
+    <string name="data_saved_error">Désolé, la sauvegarde du questionnaire a échoué.</string>
+    <string name="data_saved_ok">Le Questionnaire a été enregistré avec succès.</string>
+    <string name="delete_confirm">Supprimer %s questionnaire(s)?</string>
+    <string name="delete_yes">Supprimer ces questionnaires</string>
+    <string name="download_all_successful">Tous questionnaires téléchargés avec succès.</string>
+    <string name="download_failed_with_error">Questionnaire \"%1$s\" a échoué. %2$s.</string>
+    <string name="enter_data_description">Vous êtes au début du questionnaire \"%s\". Pour commencer, éffleurer
+        l\'écrancomme illustré.
+    </string>
+    <string name="fetching_file">Obtention de questionnaires : %1$s.\n\nForm %2$s de %3$s .</string>
+    <string name="file_deleted_error">Désolé, %1$s de %2$s questionnaires sélectionnés ont échoué la suppression.
+    </string>
+    <string name="file_deleted_ok">%s questionnaire(s) supprimé(s) avec succès.</string>
+    <string name="file_delete_in_progress">Désolé, une action de suppression d\'un questionnaire est en cours.</string>
+    <string name="finished_disk_scan">Le scan est fini. Tous questionnaires sont chargés.</string>
+    <string name="form">Questionnaire</string>
+    <string name="forms">Questionnaires vides</string>
+    <string name="loading_form">Chargement du questionnaire…</string>
+    <string name="mark_finished">Marquer le questionnaire comme finalisé</string>
+    <string name="noselect_error">Désolé, vous n\'avez pas sélectionné un questionnaire.</string>
+    <string name="no_items_display_forms">Rien à afficher.\n\nEssayez d\'obtenir et remplire un questionnaire.</string>
+    <string name="no_items_display_instances">Rien à afficher.\n\nEssayez de finalisé vos questionnaires avant de les
+        envoyés.
+    </string>
+    <string name="parse_error">Désolé. Impossible d\'analyser le questionnaire.</string>
+    <string name="parse_legacy_formlist_failed">Le serveur n\'a pas pu produire un document de questionnaires compatible
+        avec Aggregate 0.9.x. : %s
+    </string>
+    <string name="parse_openrosa_formlist_failed">Le serveur n\'a pas pu produire un document de questionnaires
+        compatible
+        avec OpenRosa 1.0 : %s
+    </string>
+    <string name="save_all_answers">Sauvegarder questionnaire</string>
+    <string name="save_data_message">Merci de sauvegarder le questionnaire. Afin de sauvegarder vos réponses.</string>
+    <string name="saving_form">Sauvegarde du Questionnaire…</string>
+    <string name="sending_items">Envoi de %1$s de %2$s questionnaire(s)</string>
+    <string name="uploading_data">Envoi du questionnaire…</string>
+    <string name="upload_all_successful">%s questionnaires envoyés avec succès.</string>
+    <string name="upload_some_failed">Désolé, l\'envoi de %s questionnaire(s) ont échoué.</string>
+    <string name="change_formlist_url">Chemin de la liste de questionnaires (ajouté à l\'URL du serveur)</string>
+    <string name="formlist_url">Chemin de la liste de questionnaires</string>
+    <string name="form_scan_starting">Recherche de questionnaires…</string>
+    <string name="no_forms_uploaded">Désolé, pas de questionnaires téléchargés.</string>
+    <string name="save_form_as">Nommer le Questionnaire :</string>
+    <string name="form_name">Nom du questionnaire :</string>
+    <string name="cannot_edit_completed_form">This questionnaire cannot be edited once it has been marked as complete.
+    </string>
+    <string name="show_sent_and_unsent_forms">Questionnaires envoyés et non envoyés</string>
+    <string name="show_unsent_forms">Que des questionnaires non envoyés</string>
+    <string name="parent_form_not_present">Il n\'est pas possible d\'editer ce questionnaire car son questionnaire
+        modèle
+        n\'est plus présent ou a été supprimé.\n\nForm ID: %1$s
+    </string>
 </resources>
