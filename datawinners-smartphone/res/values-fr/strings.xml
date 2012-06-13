@@ -22,4 +22,5 @@ License.
     <string name="app_name">DataWinners</string>
     <string name="main_menu_message">DataWinners</string>
     <string name="download">Obtenir ceux sélectionnés</string>
+    <string name="default_server_url">https://www.datawinners.com/xforms</string>
 </resources>
