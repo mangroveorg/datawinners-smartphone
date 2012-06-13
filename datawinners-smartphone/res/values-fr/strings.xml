@@ -77,4 +77,10 @@ License.
         modèle
         n\'est plus présent ou a été supprimé.\n\nForm ID: %1$s
     </string>
+    <string name="added_on_date_at_time">\'Ajouté le\' EEE, MMM dd, yyyy \'à\' HH:mm</string><!-- http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html -->
+    <string name="saved_on_date_at_time">\'Sauvegardé le\' EEE, MMM dd, yyyy \'à\' HH:mm</string><!-- http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html -->
+    <string name="finalized_on_date_at_time">\'Finalisé le\' EEE, MMM dd, yyyy \'à\' HH:mm</string><!-- http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html -->
+    <string name="sent_on_date_at_time">\'Envoyé le\' EEE, MMM dd, yyyy \'à\' HH:mm</string><!-- http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html -->
+    <string name="sending_failed_on_date_at_time">\'L\'envoi a échoué le\' EEE, MMM dd, yyyy \'à\' HH:mm</string><!-- http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html -->
+
 </resources>
