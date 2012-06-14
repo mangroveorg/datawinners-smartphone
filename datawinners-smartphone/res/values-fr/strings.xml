@@ -11,6 +11,7 @@ the specific language governing permissions and limitations under the
 License.
 -->
 <resources>
+    <string name="change_username">Datawinners Username</string>
     <string name="enter_data">Remplir un Questionnaire Vierge</string>
     <string name="enter_data_button">Remplir un Questionnaire Vierge</string>
     <string name="review_data">Modifier un Questionnaire Enregistré</string>

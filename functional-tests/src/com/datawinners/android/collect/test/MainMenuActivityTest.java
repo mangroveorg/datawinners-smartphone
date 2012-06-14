@@ -17,6 +17,7 @@ import org.odk.collect.android.activities.MainMenuActivity;
 public class MainMenuActivityTest extends ActivityInstrumentationTestCase2<MainMenuActivity> {
 
     private Solo solo;
+    private Utils utils;
 
     public MainMenuActivityTest() {
         super(MainMenuActivity.class);
@@ -26,6 +27,7 @@ public class MainMenuActivityTest extends ActivityInstrumentationTestCase2<MainM
     protected void setUp() throws Exception {
         super.setUp();
         solo = new Solo(getInstrumentation(), getActivity());
+        utils = new Utils(solo);
     }
 
     public void testShouldCheckForCorrectLabelsOnMainMenu() {
@@ -36,25 +38,10 @@ public class MainMenuActivityTest extends ActivityInstrumentationTestCase2<MainM
 
     public void testLoginWithValidCredentials() {
 
-        solo.sendKey(Solo.MENU);
-        solo.sendKey(Solo.MENU);
-        solo.clickOnMenuItem("Change Settings");
-
-        solo.clickOnText("URL");
-        solo.clearEditText(0);
-        solo.typeText(0, "http://178.79.161.90/xforms");
-        solo.clickOnButton("OK");
-
-
-        solo.clickOnText("Username");
-        solo.clearEditText(0);
-        solo.typeText(0, "ngo@mailinator.com");
-        solo.clickOnButton("OK");
-
-        solo.clickOnText("Password");
-        solo.clearEditText(0);
-        solo.typeText(0, "password");
-        solo.clickOnButton("OK");
+        utils.goToDatawinnersSettings();
+        utils.changeDefaultServerUrl("http://178.79.161.90/xforms");
+        utils.changeUserName("ngo@mailinator.com");
+        utils.changePassword("password");
 
         solo.goBack();
 
