@@ -2,7 +2,7 @@ package com.datawinners.android.collect.test;
 
 import android.test.ActivityInstrumentationTestCase2;
 import com.jayway.android.robotium.solo.Solo;
-import org.odk.collect.android.activities.SplashScreenActivity;
+import org.odk.collect.android.activities.MainMenuActivity;
 
 /**
  * This is a simple framework for a test of an Application.  See
@@ -14,12 +14,12 @@ import org.odk.collect.android.activities.SplashScreenActivity;
  * -e class org.odk.collect.android.activities.MainMenuActivityTest \
  * com.datawinners.android.collect.test/android.test.InstrumentationTestRunner
  */
-public class MainMenuActivityTest extends ActivityInstrumentationTestCase2<SplashScreenActivity> {
+public class MainMenuActivityTest extends ActivityInstrumentationTestCase2<MainMenuActivity> {
 
     private Solo solo;
 
     public MainMenuActivityTest() {
-        super(SplashScreenActivity.class);
+        super(MainMenuActivity.class);
     }
 
     @Override
@@ -33,6 +33,40 @@ public class MainMenuActivityTest extends ActivityInstrumentationTestCase2<Splas
         assertTrue(solo.searchButton("Edit Saved Questionnaire"));
 
     }
+
+    public void testLoginWithValidCredentials() {
+
+        solo.sendKey(Solo.MENU);
+        solo.sendKey(Solo.MENU);
+        solo.clickOnMenuItem("Change Settings");
+
+        solo.clickOnText("URL");
+        solo.clearEditText(0);
+        solo.typeText(0, "http://178.79.161.90/xforms");
+        solo.clickOnButton("OK");
+
+
+        solo.clickOnText("Username");
+        solo.clearEditText(0);
+        solo.typeText(0, "ngo@mailinator.com");
+        solo.clickOnButton("OK");
+
+        solo.clickOnText("Password");
+        solo.clearEditText(0);
+        solo.typeText(0, "password");
+        solo.clickOnButton("OK");
+
+        solo.goBack();
+
+        solo.clickOnButton("Get Blank Questionnaire");
+        solo.sleep(5000);
+        solo.clickOnButton("OK");
+
+        assertTrue(solo.searchText("DataWinners > Get Blank Questionnaire"));
+
+
+    }
+
 
     @Override
     protected void tearDown() throws Exception {
