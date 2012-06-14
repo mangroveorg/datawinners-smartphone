@@ -23,6 +23,7 @@ License.
     <string name="main_menu_message">DataWinners</string>
     <string name="download">Obtenir ceux sélectionnés</string>
     <string name="default_server_url">https://www.datawinners.com/xforms</string>
+    <string name="app_url">https://www.datawinners.com</string>
     <string name="data">Questionnaires sauvegardés</string>
     <string name="data_saved_error">Désolé, la sauvegarde du questionnaire a échoué.</string>
     <string name="data_saved_ok">Le Questionnaire a été enregistré avec succès.</string>
