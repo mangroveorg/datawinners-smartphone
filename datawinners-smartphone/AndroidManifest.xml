@@ -161,7 +161,7 @@
         <activity
                 android:name="org.odk.collect.android.activities.AndroidShortcuts"
                 android:theme="@android:style/Theme.Translucent.NoTitleBar"
-                android:label="ODK Form">
+                android:label="Datawinners Form">
             <intent-filter>
                 <action
                         android:name="android.intent.action.CREATE_SHORTCUT"/>
