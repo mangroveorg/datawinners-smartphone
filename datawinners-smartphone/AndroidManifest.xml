@@ -9,7 +9,8 @@
 <manifest
         xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.datawinners.android.collect"
-        android:versionName="1.0">
+        android:versionName="1.0"
+        android:versionCode="0">
     <uses-permission
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:name="android.permission.READ_PHONE_STATE"/>
