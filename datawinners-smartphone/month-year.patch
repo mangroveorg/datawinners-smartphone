@@ -1,6 +1,6 @@
-diff -r 15185704d55c src/org/odk/collect/android/widgets/DateWidget.java
---- a/src/org/odk/collect/android/widgets/DateWidget.java	Thu Feb 02 09:57:17 2012 -0800
-+++ b/src/org/odk/collect/android/widgets/DateWidget.java	Tue Jun 12 14:08:17 2012 +0530
+diff -r f3d6d92d3066 src/org/odk/collect/android/widgets/DateWidget.java
+--- a/src/org/odk/collect/android/widgets/DateWidget.java	Tue May 08 10:08:29 2012 -0700
++++ b/src/org/odk/collect/android/widgets/DateWidget.java	Fri Jun 15 11:20:23 2012 +0530
 @@ -21,9 +21,11 @@
  
  import android.content.Context;
@@ -33,7 +33,7 @@ diff -r 15185704d55c src/org/odk/collect/android/widgets/DateWidget.java
          mDateListener = new DatePicker.OnDateChangedListener() {
              @Override
              public void onDateChanged(DatePicker view, int year, int month, int day) {
-@@ -75,6 +81,45 @@
+@@ -82,6 +88,45 @@
          addView(mDatePicker);
      }
  
@@ -79,16 +79,17 @@ diff -r 15185704d55c src/org/odk/collect/android/widgets/DateWidget.java
  
      private void setAnswer() {
  
-@@ -103,9 +148,9 @@
+@@ -110,10 +155,9 @@
  
      @Override
      public IAnswerData getAnswer() {
 -        DateTime ldt =
 -            new DateTime(mDatePicker.getYear(), mDatePicker.getMonth() + 1,
 -                    mDatePicker.getDayOfMonth(), 0, 0);
-+        DateTime ldt = new DateTime(mDatePicker.getYear(), hideMonth ? 1 : mDatePicker.getMonth() + 1,
-+                    (hideMonth || hideDay) ? 1 : mDatePicker.getDayOfMonth(), 0, 0);
-+
-        // DateTime utc = ldt.withZone(DateTimeZone.forID("UTC"));
+-        // DateTime utc = ldt.withZone(DateTimeZone.forID("UTC"));
++        DateTime ldt = new DateTime(mDatePicker.getYear(), hideMonth ? 1 : mDatePicker.getMonth() + 1, 
++			(hideMonth || hideDay) ? 1 : mDatePicker.getDayOfMonth(), 0, 0);
++	// DateTime utc = ldt.withZone(DateTimeZone.forID("UTC"));
          return new DateData(ldt.toDate());
      }
+ 
