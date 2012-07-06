@@ -1,0 +1,29 @@
+diff -r f3d6d92d3066 src/org/odk/collect/android/provider/FormsProviderAPI.java
+--- a/src/org/odk/collect/android/provider/FormsProviderAPI.java	Tue May 08 10:08:29 2012 -0700
++++ b/src/org/odk/collect/android/provider/FormsProviderAPI.java	Fri Jul 06 12:50:56 2012 +0530
+@@ -23,11 +23,11 @@
+  * Convenience definitions for NotePadProvider
+  */
+ public final class FormsProviderAPI {
+-    public static final String AUTHORITY = "org.odk.collect.android.provider.odk.forms";
++    public static final String AUTHORITY = "com.datawinners.android.collect.provider.odk.forms";
+ 
+     // This class cannot be instantiated
+     private FormsProviderAPI() {}
+-    
++
+     /**
+      * Notes table
+      */
+diff -r f3d6d92d3066 src/org/odk/collect/android/provider/InstanceProviderAPI.java
+--- a/src/org/odk/collect/android/provider/InstanceProviderAPI.java	Tue May 08 10:08:29 2012 -0700
++++ b/src/org/odk/collect/android/provider/InstanceProviderAPI.java	Fri Jul 06 12:50:56 2012 +0530
+@@ -23,7 +23,7 @@
+  * Convenience definitions for NotePadProvider
+  */
+ public final class InstanceProviderAPI {
+-    public static final String AUTHORITY = "org.odk.collect.android.provider.odk.instances";
++    public static final String AUTHORITY = "com.datawinners.android.collect.provider.odk.instances";
+ 
+     // This class cannot be instantiated
+     private InstanceProviderAPI() {}
