@@ -48,10 +48,10 @@
             android:theme="@android:style/Theme.Light"
             android:name="org.odk.collect.android.application.Collect">
         <provider
-                android:name="com.datawinners.android.collect.SmartPhoneFormsProvider"
+                android:name="com.datawinners.android.providers.SmartPhoneFormsProvider"
                 android:authorities="com.datawinners.android.collect.provider.odk.forms"/>
         <provider
-                android:name="com.datawinners.android.collect.SmartPhoneInstanceProvider"
+                android:name="com.datawinners.android.providers.SmartPhoneInstanceProvider"
                 android:authorities="com.datawinners.android.collect.provider.odk.instances"/>
         <activity
                 android:label="@string/app_name"
