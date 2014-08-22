@@ -12,7 +12,7 @@
     package="com.datawinners.android.collect.test"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="7" >
+    <uses-sdk android:minSdkVersion="11" >
     </uses-sdk>
 
     <supports-screens

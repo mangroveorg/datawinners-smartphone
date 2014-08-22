@@ -12,6 +12,7 @@
 	-->
 <resources>
     <string name="change_username">Datawinners Username</string>
+    <string name="change_password">Datawinners Password</string>
     <string name="enter_data">Fill Blank Questionnaire</string>
     <string name="enter_data_button">Fill Blank Questionnaire</string>
     <string name="review_data">Edit Saved Questionnaire</string>
