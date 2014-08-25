@@ -4,3 +4,4 @@ bin/
 *.iml
 gen/
 opendatakit.collect
+google-play-services_lib

@@ -1,0 +1,14 @@
+# HG changeset patch
+# Parent b00ca8d82040ef7d8cd78ecd3f00b963de54d861
+diff -r b00ca8d82040 -r 30e6e31d45e6 res/xml/admin_preferences.xml
+--- a/res/xml/admin_preferences.xml	Thu May 22 15:37:28 2014 -0700
++++ b/res/xml/admin_preferences.xml	Mon Aug 25 11:58:56 2014 +0530
+@@ -7,7 +7,7 @@
+         <intent
+             android:action="android.intent.action.VIEW"
+             android:targetClass="org.odk.collect.android.preferences.PreferencesActivity"
+-            android:targetPackage="org.odk.collect.android" >
++            android:targetPackage="com.datawinners.android.collect" >
+             <extra
+                 android:name="adminMode"
+                 android:value="true" />
