@@ -15,8 +15,8 @@ echo 'export PATH=/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:`pwd`/platform-to
 echo 'export ANDROID_HOME=`pwd`' >> ~/.bashrc
 . ~/.bashrc
 
-sudo apt-get install ﻿lib32stdc++6
+sudo apt-get install lib32stdc++6
 ﻿sudo apt-get install lib32z1
 cp ../datawinners-smartphone/datawinners-smartphone/build-playservices.xml ../datawinners-smartphone/datawinners-smartphone/playservices/build.xml
 cd tools
-android update project --name datawinners-smartphone --target 3 --path ../../datawinners-smartphone/datawinners-smartphone --subprojects
+android update project --name datawinners-smartphone --target 2 --path ../../datawinners-smartphone/datawinners-smartphone --subprojects
