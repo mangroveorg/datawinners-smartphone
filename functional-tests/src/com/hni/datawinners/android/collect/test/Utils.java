@@ -1,4 +1,4 @@
-package com.datawinners.android.collect.test;
+package com.hni.datawinners.android.collect.test;
 
 import com.jayway.android.robotium.solo.Solo;
 

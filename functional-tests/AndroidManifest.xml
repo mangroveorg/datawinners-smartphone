@@ -9,7 +9,7 @@
 	the specific language governing permissions and limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.datawinners.android.collect.test"
+    package="com.hni.datawinners.android.collect.test"
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="11" >
@@ -28,6 +28,6 @@
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.datawinners.android.collect"
+                     android:targetPackage="com.hni.datawinners.android.collect"
                      android:label="AUTOMATION"/>
 </manifest>

@@ -8,5 +8,5 @@ cd ../functional-tests
 adb install -r ./bin/automation-debug.apk
 adb shell input keyevent 82
 echo "Running tests "
-adb shell am instrument -w com.datawinners.android.collect.test/android.test.InstrumentationTestRunner
+adb shell am instrument -w com.hni.datawinners.android.collect.test/android.test.InstrumentationTestRunner
 killall emulator-arm

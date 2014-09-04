@@ -6,7 +6,7 @@ diff -r f3d6d92d3066 src/org/odk/collect/android/provider/FormsProviderAPI.java
   */
  public final class FormsProviderAPI {
 -    public static final String AUTHORITY = "org.odk.collect.android.provider.odk.forms";
-+    public static final String AUTHORITY = "com.datawinners.android.collect.provider.odk.forms";
++    public static final String AUTHORITY = "com.hni.datawinners.android.collect.provider.odk.forms";
  
      // This class cannot be instantiated
      private FormsProviderAPI() {}
@@ -23,7 +23,7 @@ diff -r f3d6d92d3066 src/org/odk/collect/android/provider/InstanceProviderAPI.ja
   */
  public final class InstanceProviderAPI {
 -    public static final String AUTHORITY = "org.odk.collect.android.provider.odk.instances";
-+    public static final String AUTHORITY = "com.datawinners.android.collect.provider.odk.instances";
++    public static final String AUTHORITY = "com.hni.datawinners.android.collect.provider.odk.instances";
  
      // This class cannot be instantiated
      private InstanceProviderAPI() {}

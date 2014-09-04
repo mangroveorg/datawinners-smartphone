@@ -1,4 +1,4 @@
-package com.datawinners.android.providers;
+package com.hni.datawinners.android.providers;
 
 import org.odk.collect.android.provider.InstanceProvider;
 

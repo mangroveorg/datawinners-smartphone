@@ -8,7 +8,7 @@ diff -r b00ca8d82040 -r 30e6e31d45e6 res/xml/admin_preferences.xml
              android:action="android.intent.action.VIEW"
              android:targetClass="org.odk.collect.android.preferences.PreferencesActivity"
 -            android:targetPackage="org.odk.collect.android" >
-+            android:targetPackage="com.datawinners.android.collect" >
++            android:targetPackage="com.hni.datawinners.android.collect" >
              <extra
                  android:name="adminMode"
                  android:value="true" />
