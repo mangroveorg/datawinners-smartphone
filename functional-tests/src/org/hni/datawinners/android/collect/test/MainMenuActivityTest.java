@@ -1,4 +1,4 @@
-package com.hni.datawinners.android.collect.test;
+package org.hni.datawinners.android.collect.test;
 
 import android.test.ActivityInstrumentationTestCase2;
 import com.jayway.android.robotium.solo.Solo;
@@ -12,7 +12,7 @@ import org.odk.collect.android.activities.MainMenuActivity;
  * To run this test, you can type:
  * adb shell am instrument -w \
  * -e class org.odk.collect.android.activities.MainMenuActivityTest \
- * com.hni.datawinners.android.collect.test/android.test.InstrumentationTestRunner
+ * org.hni.datawinners.android.collect.test/android.test.InstrumentationTestRunner
  */
 public class MainMenuActivityTest extends ActivityInstrumentationTestCase2<MainMenuActivity> {
 

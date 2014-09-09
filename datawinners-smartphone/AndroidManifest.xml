@@ -8,7 +8,7 @@
 	the specific language governing permissions and limitations under the License. -->
 <manifest
         xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.hni.datawinners.android.collect"
+        package="org.hni.datawinners.android.collect"
         android:versionName="3.0"
         android:versionCode="3000">
 
@@ -52,11 +52,11 @@
             android:theme="@style/Collect"
             android:name="org.odk.collect.android.application.Collect">
         <provider
-                android:name="com.hni.datawinners.android.providers.SmartPhoneFormsProvider"
-                android:authorities="com.hni.datawinners.android.collect.provider.odk.forms"/>
+                android:name="org.hni.datawinners.android.providers.SmartPhoneFormsProvider"
+                android:authorities="org.hni.datawinners.android.collect.provider.odk.forms"/>
         <provider
-                android:name="com.hni.datawinners.android.providers.SmartPhoneInstanceProvider"
-                android:authorities="com.hni.datawinners.android.collect.provider.odk.instances"/>
+                android:name="org.hni.datawinners.android.providers.SmartPhoneInstanceProvider"
+                android:authorities="org.hni.datawinners.android.collect.provider.odk.instances"/>
         <activity
                 android:label="@string/app_name"
                 android:configChanges="orientation"
