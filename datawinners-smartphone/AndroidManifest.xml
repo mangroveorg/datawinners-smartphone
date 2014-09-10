@@ -76,9 +76,6 @@
             android:name="org.odk.collect.android.activities.GoogleMapsEngineUploaderActivity"
             android:label="@string/app_name" />
         <activity
-            android:name="org.odk.collect.android.activities.GoogleMapsEngineUploaderActivityWithGoogleTask"
-            android:label="@string/app_name" />
-        <activity
                 android:name="org.odk.collect.android.activities.FormEntryActivity"
                 android:label="@string/app_name"
                 android:configChanges="orientation"
