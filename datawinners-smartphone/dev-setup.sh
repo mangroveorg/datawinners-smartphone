@@ -6,5 +6,5 @@ hg import --no-commit ../authorities.patch ../icons.patch ../target_package_chan
 android update lib-project --target 2 --path ./
 echo "android.library=true" >> project.properties
 cd ..
-cp -r opendatakit.collect/libs/* libs/
+cp -rf opendatakit.collect/libs/ .
 cp -r playservices/libs/* libs/
