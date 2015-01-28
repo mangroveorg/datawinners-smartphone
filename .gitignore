@@ -3,5 +3,6 @@ out/
 bin/
 *.iml
 gen/
+libs/
 opendatakit.collect
 datawinners-smartphone/playservices/
