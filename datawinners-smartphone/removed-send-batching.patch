@@ -1,0 +1,47 @@
+# HG changeset patch
+# User ajay
+# Date 1422472038 -19800
+#      Thu Jan 29 00:37:18 2015 +0530
+# Node ID cd7cf8e1edd231363efc8e14558acde5ac942b26
+# Parent  4dba16025944fe75216e621e10c96bfd9a49107e
+Commented out batching (not supported on DW server)
+
+diff -r 4dba16025944 -r cd7cf8e1edd2 src/org/odk/collect/android/tasks/InstanceUploaderTask.java
+--- a/src/org/odk/collect/android/tasks/InstanceUploaderTask.java	Fri Jan 09 15:41:51 2015 -0800
++++ b/src/org/odk/collect/android/tasks/InstanceUploaderTask.java	Thu Jan 29 00:37:18 2015 +0530
+@@ -410,20 +410,21 @@
+                 }
+ 
+                 // we've added at least one attachment to the request...
+-                if (j + 1 < files.size()) {
+-                    if ((j-lastJ+1 > 100) || (byteCount + files.get(j + 1).length() > 10000000L)) {
+-                        // the next file would exceed the 10MB threshold...
+-                        Log.i(t, "Extremely long post is being split into multiple posts");
+-                        try {
+-                            StringBody sb = new StringBody("yes", Charset.forName("UTF-8"));
+-                            entity.addPart("*isIncomplete*", sb);
+-                        } catch (Exception e) {
+-                            e.printStackTrace(); // never happens...
+-                        }
+-                        ++j; // advance over the last attachment added...
+-                        break;
+-                    }
+-                }
++//                Commented out batching for now since not supported on DW server - Ajay
++//                if (j + 1 < files.size()) {
++//                    if ((j-lastJ+1 > 100) || (byteCount + files.get(j + 1).length() > 10000000L)) {
++//                        // the next file would exceed the 10MB threshold...
++//                        Log.i(t, "Extremely long post is being split into multiple posts");
++//                        try {
++//                            StringBody sb = new StringBody("yes", Charset.forName("UTF-8"));
++//                            entity.addPart("*isIncomplete*", sb);
++//                        } catch (Exception e) {
++//                            e.printStackTrace(); // never happens...
++//                        }
++//                        ++j; // advance over the last attachment added...
++//                        break;
++//                    }
++//                }
+             }
+ 
+             httppost.setEntity(entity);
