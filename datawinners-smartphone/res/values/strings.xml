@@ -26,7 +26,7 @@
     <string name="main_menu_message">DataWinners</string>
     <string name="click_to_web">Tap to visit https://www.datawinners.com</string>
     <string name="app_url">https://www.datawinners.com</string>
-    <string name="default_server_url">https://www.datawinners.com/xforms</string>
+    <string name="default_server_url">https://app.datawinners.com/xforms</string>
     <string name="cannot_edit_completed_form">This questionnaire cannot be edited once it has been marked as complete. It may be encrypted.</string>
     <string name="data">Saved Questionnaires</string>
     <string name="data_saved_error">Sorry, questionnaire save failed!</string>
