@@ -1,0 +1,100 @@
+Index: datawinners-smartphone/opendatakit.collect/src/org/odk/collect/android/widgets/AutoCompleteWidget.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- datawinners-smartphone/opendatakit.collect/src/org/odk/collect/android/widgets/AutoCompleteWidget.java	(revision 1333:4dba16025944fe75216e621e10c96bfd9a49107e)
++++ datawinners-smartphone/opendatakit.collect/src/org/odk/collect/android/widgets/AutoCompleteWidget.java	(revision 1333+:4dba16025944+)
+@@ -14,10 +14,11 @@
+ 
+ package org.odk.collect.android.widgets;
+ 
+-import java.util.ArrayList;
+-import java.util.List;
+-import java.util.Locale;
+-
++import android.content.Context;
++import android.graphics.Color;
++import android.view.Gravity;
++import android.view.inputmethod.InputMethodManager;
++import android.widget.*;
+ import org.javarosa.core.model.SelectChoice;
+ import org.javarosa.core.model.data.IAnswerData;
+ import org.javarosa.core.model.data.SelectOneData;
+@@ -26,15 +27,9 @@
+ import org.javarosa.xpath.expr.XPathFuncExpr;
+ import org.odk.collect.android.external.ExternalDataUtil;
+ 
+-import android.content.Context;
+-import android.graphics.Color;
+-import android.view.Gravity;
+-import android.view.inputmethod.InputMethodManager;
+-import android.widget.ArrayAdapter;
+-import android.widget.AutoCompleteTextView;
+-import android.widget.Filter;
+-import android.widget.Filterable;
+-import android.widget.Toast;
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Locale;
+ 
+ /**
+  * AutoCompleteWidget handles select-one fields using an autocomplete text box. The user types part
+@@ -90,6 +85,7 @@
+         choices.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+ 
+         autocomplete.setAdapter(choices);
++        autocomplete.setHint("Start typing ...");
+         autocomplete.setTextColor(Color.BLACK);
+         setGravity(Gravity.LEFT);
+ 
+@@ -200,6 +196,7 @@
+         }
+ 
+         private class ItemsFilter extends Filter {
++            private String previousPrefix;
+             final ArrayList<String> mItemsArray;
+ 
+ 
+@@ -217,11 +214,6 @@
+                 // Initiate our results object
+                 FilterResults results = new FilterResults();
+ 
+-                // If the adapter array is empty, check the actual items array and use it
+-                if (mItems == null) {
+-                    mItems = new ArrayList<String>(mItemsArray);
+-                }
+-
+                 // No prefix is sent to filter by so we're going to send back the original array
+                 if (prefix == null || prefix.length() == 0) {
+                     results.values = mItemsArray;
+@@ -230,6 +222,10 @@
+                     // Compare lower case strings
+                     String prefixString = prefix.toString().toLowerCase(Locale.getDefault());
+ 
++                    if (isBackspace(prefixString)) {
++                        mItems = new ArrayList<String>(mItemsArray);
++                    }
++
+                     // Local to here so we're not changing actual array
+                     final ArrayList<String> items = mItems;
+                     final int count = items.size();
+@@ -276,12 +272,18 @@
+                         }
+                     }
+ 
++                    previousPrefix = prefixString;
++
+                     // Set and return
+                     results.values = newItems;
+                     results.count = newItems.size();
+                 }
+ 
+                 return results;
++            }
++
++            private boolean isBackspace(String prefix) {
++                return previousPrefix != null && previousPrefix.length() > prefix.length();
+             }
+ 
+ 
