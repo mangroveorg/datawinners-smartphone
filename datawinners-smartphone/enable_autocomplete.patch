@@ -3,23 +3,23 @@ IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
---- datawinners-smartphone/opendatakit.collect/src/org/odk/collect/android/widgets/WidgetFactory.java	(revision 1333:4dba16025944fe75216e621e10c96bfd9a49107e)
-+++ datawinners-smartphone/opendatakit.collect/src/org/odk/collect/android/widgets/WidgetFactory.java	(revision 1333+:4dba16025944+)
+--- a/src/org/odk/collect/android/widgets/WidgetFactory.java	(revision 1333:4dba16025944fe75216e621e10c96bfd9a49107e)
++++ b/src/org/odk/collect/android/widgets/WidgetFactory.java	(revision 1333+:4dba16025944+)
 @@ -14,13 +14,12 @@
- 
+
  package org.odk.collect.android.widgets;
- 
+
 -import java.util.Locale;
 -
 +import android.content.Context;
 +import android.util.Log;
  import org.javarosa.core.model.Constants;
  import org.javarosa.form.api.FormEntryPrompt;
- 
+
 -import android.content.Context;
 -import android.util.Log;
 +import java.util.Locale;
- 
+
  /**
   * Convenience class that handles creation of widgets.
 @@ -146,17 +145,17 @@

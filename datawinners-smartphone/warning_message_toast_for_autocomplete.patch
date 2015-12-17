@@ -1,0 +1,59 @@
+Index: res/values-fr/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- a/res/values-fr/strings.xml	(revision 1333:4dba16025944fe75216e621e10c96bfd9a49107e)
++++ b/res/values-fr/strings.xml	(revision 1333+:4dba16025944+)
+@@ -316,4 +316,6 @@
+   <string name="delete_after_send_summary">Suppression des médias et formulaire finalisés après l\'envoi au serveur</string>
+   <string name="change_server_url">URL du serveur</string>
+   <string name="gme_search_browse">Rechercher des formulaires ou sélectionner \'Mon Drive\' ci-dessous pour le parcourir.  </string>
++  <string name="warning">Attention</string>
++  <string name="warning_message_for_autocomplete">ne correspond à aucune réponse. Aucune réponse enregistrée.</string>
+ </resources>
+Index: src/org/odk/collect/android/widgets/AutoCompleteWidget.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- a/src/org/odk/collect/android/widgets/AutoCompleteWidget.java	(revision 1333:4dba16025944fe75216e621e10c96bfd9a49107e)
++++ b/src/org/odk/collect/android/widgets/AutoCompleteWidget.java	(revision 1333+:4dba16025944+)
+@@ -25,6 +25,7 @@
+ import org.javarosa.core.model.data.helper.Selection;
+ import org.javarosa.form.api.FormEntryPrompt;
+ import org.javarosa.xpath.expr.XPathFuncExpr;
++import org.odk.collect.android.R;
+ import org.odk.collect.android.external.ExternalDataUtil;
+
+ import java.util.ArrayList;
+@@ -126,9 +127,11 @@
+         // them that their
+         // solution didn't count.
+         if (!response.equals("")) {
+-            Toast.makeText(getContext(),
+-                "Warning: \"" + response + "\" does not match any answers. No answer recorded.",
+-                Toast.LENGTH_LONG).show();
++            Toast toast = Toast.makeText(getContext(),
++                    getContext().getString(R.string.warning) + ": \"" + response + "\" " + getContext().getString(R.string.warning_message_for_autocomplete),
++                    Toast.LENGTH_LONG);
++            toast.setGravity(Gravity.CENTER,0,0);
++            toast.show();
+         }
+         return null;
+     }
+Index: res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- a/res/values/strings.xml	(revision 1333:4dba16025944fe75216e621e10c96bfd9a49107e)
++++ b/res/values/strings.xml	(revision 1333+:4dba16025944+)
+@@ -332,4 +332,6 @@
+ <string name="no_blank_search">Search field cannot be blank.</string>
+ <string name="select_maps_account">You have selected Google Maps Engine as your server, please select a corresponding Google Account in the General Settings before continuing</string>
+ <string name="get_project_IDs">Getting Project IDs</string>
++<string name="warning">Warning</string>
++<string name="warning_message_for_autocomplete">does not match any answers. No answer recorded.</string>
+ </resources>
+\ No newline at end of file
