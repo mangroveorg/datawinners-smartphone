@@ -1,0 +1,179 @@
+Index: src/org/odk/collect/android/tasks/DownloadFormListTask.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- a/src/org/odk/collect/android/tasks/DownloadFormListTask.java	(revision 1333:4dba16025944fe75216e621e10c96bfd9a49107e)
++++ b/src/org/odk/collect/android/tasks/DownloadFormListTask.java	(revision 1333+:4dba16025944+)
+@@ -140,6 +140,7 @@
+                 String majorMinorVersion = null;
+                 String description = null;
+                 String downloadUrl = null;
++                String externalItemsetUrl = null;
+                 String manifestUrl = null;
+                 // don't process descriptionUrl
+                 int fieldCount = xformElement.getChildCount();
+@@ -189,8 +190,13 @@
+                         if (manifestUrl != null && manifestUrl.length() == 0) {
+                             manifestUrl = null;
+                         }
++                    } else if (tag.equals("externalItemsetUrl")) {
++                        externalItemsetUrl = XFormParser.getXMLText(child, true);
++                        if (externalItemsetUrl != null && externalItemsetUrl.length() == 0) {
++                            externalItemsetUrl = null;
+-                    }
+-                }
++                        }
++                    }
++                }
+                 if (formId == null || downloadUrl == null || formName == null) {
+                     String error =
+                         "Forms list entry " + Integer.toString(i)
+@@ -203,7 +209,7 @@
+                             R.string.parse_openrosa_formlist_failed, error)));
+                     return formList;
+                 }
+-                formList.put(formId, new FormDetails(formName, downloadUrl, manifestUrl, formId, (version != null) ? version : majorMinorVersion));
++                formList.put(formId, new FormDetails(formName, downloadUrl, manifestUrl, formId, (version != null) ? version : majorMinorVersion, externalItemsetUrl));
+             }
+         } else {
+             // Aggregate 0.9.x mode...
+@@ -246,7 +252,7 @@
+                                 R.string.parse_legacy_formlist_failed, error)));
+                         return formList;
+                     }
+-                    formList.put(formName, new FormDetails(formName, downloadUrl, null, formId, null));
++                    formList.put(formName, new FormDetails(formName, downloadUrl, null, formId, null, null));
+
+                     formId = null;
+                 }
+Index: src/org/odk/collect/android/logic/FormDetails.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- a/src/org/odk/collect/android/logic/FormDetails.java	(revision 1333:4dba16025944fe75216e621e10c96bfd9a49107e)
++++ b/src/org/odk/collect/android/logic/FormDetails.java	(revision 1333+:4dba16025944+)
+@@ -29,8 +29,8 @@
+     public final String manifestUrl;
+     public final String formID;
+     public final String formVersion;
++    public final String externalItemsetUrl;
+
+-
+     public FormDetails(String error) {
+         manifestUrl = null;
+         downloadUrl = null;
+@@ -38,16 +38,18 @@
+         formID = null;
+         formVersion = null;
+         errorStr = error;
++        externalItemsetUrl = null;
+     }
+
+
+-    public FormDetails(String name, String url, String manifest, String id, String version) {
++    public FormDetails(String name, String url, String manifest, String id, String version, String itemsetUrl) {
+         manifestUrl = manifest;
+         downloadUrl = url;
+         formName = name;
+         formID = id;
+         formVersion = version;
+         errorStr = null;
++        externalItemsetUrl = itemsetUrl;
+     }
+
+ }
+Index: src/org/odk/collect/android/tasks/DownloadFormsTask.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- a/src/org/odk/collect/android/tasks/DownloadFormsTask.java	(revision 1333:4dba16025944fe75216e621e10c96bfd9a49107e)
++++ b/src/org/odk/collect/android/tasks/DownloadFormsTask.java	(revision 1333+:4dba16025944+)
+@@ -98,10 +98,14 @@
+             String tempMediaPath = null;
+             String finalMediaPath = null;
+             FileResult fileResult = null;
++            FileResult itemsetResult = null;
+             try {
+                 // get the xml file
+                 // if we've downloaded a duplicate, this gives us the file
+                 fileResult = downloadXform(fd.formName, fd.downloadUrl);
++                if(fd.externalItemsetUrl != null) {
++                    itemsetResult = downloadItemset(fileResult.getFile().getAbsolutePath(), fd.externalItemsetUrl);
++                }
+
+                 if (fd.manifestUrl != null) {
+                     // use a temporary media path until everything is ok.
+@@ -302,6 +306,70 @@
+         File f = new File(path);
+         while (f.exists()) {
+             path = Collect.FORMS_PATH + File.separator + rootName + "_" + i + ".xml";
++            f = new File(path);
++            i++;
++        }
++
++        downloadFile(f, url);
++
++        boolean isNew = true;
++
++        // we've downloaded the file, and we may have renamed it
++        // make sure it's not the same as a file we already have
++        String[] projection = {
++                FormsColumns.FORM_FILE_PATH
++        };
++        String[] selectionArgs = {
++                FileUtils.getMd5Hash(f)
++        };
++        String selection = FormsColumns.MD5_HASH + "=?";
++
++        Cursor c = null;
++        try {
++        	c = Collect.getInstance().getContentResolver()
++                    .query(FormsColumns.CONTENT_URI, projection, selection, selectionArgs, null);
++	        if (c.getCount() > 0) {
++	            // Should be at most, 1
++	            c.moveToFirst();
++
++                isNew = false;
++
++                // delete the file we just downloaded, because it's a duplicate
++                Log.w(t, "A duplicate file has been found, we need to remove the downloaded file and return the other one.");
++                FileUtils.deleteAndReport(f);
++
++                // set the file returned to the file we already had
++                String existingPath = c.getString(c.getColumnIndex(FormsColumns.FORM_FILE_PATH));
++                f = new File(existingPath);
++                Log.w(t, "Will use " + existingPath);
++            }
++        } finally {
++            if (c != null) {
++                c.close();
++            }
++        }
++
++        return new FileResult(f, isNew);
++    }
++
++    private FileResult downloadItemset(String xformPath, String url) throws Exception {
++
++        // clean up friendly form name...
++        String rootName = "itemsets";
++        String mediaPath = FileUtils.constructMediaPath(xformPath);
++
++        // proposed name of xml file...
++        String path = mediaPath + File.separator + rootName + ".csv";
++        File mediaFolder = new File(mediaPath);
++        if (!mediaFolder.exists())
++        {
++            mediaFolder.mkdir();
++        }
++
++        int i = 2;
++        File f = new File(path);
++        while (f.exists()) {
++            path = mediaPath + File.separator + rootName + "_" + i + ".csv";
+             f = new File(path);
+             i++;
+         }
